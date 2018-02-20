@@ -28,6 +28,7 @@ Route::get('/instalacions/','infoController@instalacions');
 
 Route::get('/condicions/','infoController@con');
 Route::get('/consells','infoController@adv');
+Route::get('/noticies/','newsController@con');
 
 
 Auth::routes();

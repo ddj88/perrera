@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Animal;
 use Illuminate\Http\Request;
-use PhpParser\Node\Stmt\Return_;
+
 
 class AnimalController extends Controller
 {
@@ -13,7 +13,7 @@ class AnimalController extends Controller
         $animal=Animal::find($id);
 
 
-        Return view('animals.show')->with(compact('animal'));
+        return view('animals.show')->with(compact('animal'));
 
 
     }
