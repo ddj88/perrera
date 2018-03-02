@@ -1,7 +1,7 @@
 
 
 
-@extends('layout.admintemplate')
+@extends('layout.Admintemplate')
 
 @section('content')
     <div class="container">

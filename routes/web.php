@@ -28,7 +28,10 @@ Route::get('/instalacions/','infoController@instalacions');
 
 Route::get('/condicions/','infoController@con');
 Route::get('/consells','infoController@adv');
-Route::get('/noticies/','newsController@con');
+
+
+Route::get('/noticies/','PostController@index')->name('noticies');
+Route::get('/noticies/{id}','PostController@show');
 
 
 Auth::routes();
@@ -45,5 +48,14 @@ Route::middleware(['auth','admin'])->prefix('admin')->namespace('Admin')->group(
     Route::get('/animals/{id}/edit', 'AnimalController@edit');
     Route::post('/animals/{id}/edit', 'AnimalController@update');
     Route::post('/animals/{id}/delete', 'AnimalController@destroy');
+
+
+
+    Route::get('/posts', 'PostController@index');
+    Route::get('/posts/create', 'PostController@create');
+    Route::post('/posts', 'PostController@store');
+    Route::get('/posts/{id}/edit', 'PostController@edit');
+    Route::post('/posts/{id}/edit', 'PostController@update');
+    Route::post('/posts/{id}/delete', 'PostController@destroy');
 });
 

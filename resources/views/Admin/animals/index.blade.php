@@ -1,4 +1,4 @@
-@extends('layout.template')
+@extends('layout.Admintemplate')
 @section('content')
 
     <div class="section text-center">
@@ -38,9 +38,6 @@
                                         <i class="fa fa-edit">editar</i>
                                     </a>
 
-                                    <a href="{{url('admin/animals/'.$animal->id.'/images')}}" type="button" rel="tooltip" title="imagenes del animal" class="btn btn-warning btn-simple btn-xs">
-                                        <i class="fa fa-image">img</i>
-                                    </a>
 
                                     {{csrf_field()}}
                                     {{-- {{method_field('DELETE')}} para el metodo delete--}}

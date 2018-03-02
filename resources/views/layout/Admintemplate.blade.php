@@ -32,35 +32,63 @@
 
 <body>
 
-<nav class="navbar navbar-inverse">
 
-<div id="app">
-
-        <div class="container">
-            <div class="navbar-header">
-
-                <!-- Collapsed Hamburger -->
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse" aria-expanded="false">
-                    <span class="sr-only">Toggle Navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-                <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+<div class="collapse navbar-collapse" id="navigation-example">
+    <ul class="nav navbar-nav navbar-right">
+        @guest
+            <li><a href="{{ route('login') }}">entrar</a></li>
+            <li><a href="{{ route('register') }}">registrar</a></li>
+        @else
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                    {{ Auth::user()->name }} <span class="caret"></span>
                 </a>
-            </div>
+
+                <ul class="dropdown-menu">
+
+                    <li>
+                        <a href="{{url('/admin/home')}}">Dashboard</a>
+
+                    </li>
 
 
-        </div>
+                    <li>
+                        <a href="{{url('/')}}">ir interfaz usuario</a>
 
+                    </li>
+                    @if(auth()->user()->admin)
+                    <li>
+                        <a href="{{url('/admin/animals/')}}">Gestionar animals</a>
 
+                    </li>
 
+                    <li>
+                        <a href="{{url('/admin/posts/')}}">Gestionar noticies</a>
+
+                    </li>
+                    @endif
+                    <li>
+                        <a href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                            Desconectar
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+                    </li>
+                </ul>
+            </li>
+        @endguest
+
+    </ul>
 </div>
 
-</nav>
+
+
+
+
 @yield('content')
 
 <footer>

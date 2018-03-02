@@ -15,7 +15,7 @@
         <div class="row">
 
                 <div class="col-sm-8 center-block">
-                    <img src="{{$animal->photo}}" class="img-responsive center-block"  style="width:50%" alt="Image">
+                    <img src="{{$animal->url}}" class="img-responsive center-block"  style="width:50%" alt="Image">
                 </div>
                 <div class="col-md-4 text-left">
                     <h4>NOM: {{$animal->name}}</h4>

@@ -4,10 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Animal extends Model
+class post extends Model
 {
-
-
     public function getUrlAttribute(){   //controla que la imagen se cargue desde una web o sea un archivo local
 
 
@@ -17,11 +15,6 @@ class Animal extends Model
             return $this->photo;
         }
 
-        return '/images/animals/' . $this->photo;
+        return '/images/posts/' . $this->photo;
     }
-
-
-
-
-
 }

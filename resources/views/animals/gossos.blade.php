@@ -16,8 +16,8 @@
             @foreach($animals as $animal)
                 <div class="col-sm-4">
 
-                    <img src="{{$animal->photo}}" class="img-responsive center-block"  style="width:50%" alt="Image">
-                    <a href="{{url('/animals/'.$animal->id)}}">{{$animal->name}}</a>
+                    <a href="{{url('/animals/'.$animal->id)}}"><img src="{{$animal->photo}}" class="img-responsive center-block"  style="width:50%" alt="Image">{{$animal->name}}</a>
+
                     <br>
                 </div>
             @endforeach
