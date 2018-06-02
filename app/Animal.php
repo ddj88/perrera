@@ -8,6 +8,8 @@ class Animal extends Model
 {
 
 
+
+
     public function getUrlAttribute(){   //controla que la imagen se cargue desde una web o sea un archivo local
 
 
